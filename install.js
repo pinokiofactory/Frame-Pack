@@ -6,7 +6,7 @@ module.exports = {
       params: {
         message: [
           //"git clone https://github.com/SUP3RMASS1VE/FramePack-fork app",
-          "git clone https://github.com/peanutcocktail/FramePack-fork app",
+          "git clone https://github.com/lllyasviel/FramePack app",
         ]
       }
     },
