@@ -1,4 +1,4 @@
 # FramePack
 
-A pinokio script for https://github.com/SUP3RMASS1VE/FramePack-fork
+A pinokio script for https://github.com/lllyasviel/FramePack
 
