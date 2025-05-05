@@ -1,5 +1,9 @@
 module.exports = async (kernel) => {
   const port = await kernel.port()
+  // Check if we're starting the F1 version
+  const isF1 = kernel.params && kernel.params.version === "f1"
+  const scriptToRun = isF1 ? "demo_gradio_f1.py" : "demo_gradio.py"
+  
   return {
     daemon: true,
     run: [
@@ -10,7 +14,7 @@ module.exports = async (kernel) => {
           env: { },                   // Edit this to customize environment variables (see documentation)
           path: "app",                // Edit this to customize the path to start the shell from
           message: [
-            `python demo_gradio.py --server 127.0.0.1 --port ${port}`,    // Edit with your custom commands
+            `python ${scriptToRun} --server 127.0.0.1 --port ${port}`,    // Edit with your custom commands
           ],
           on: [{
             // The regular expression pattern to monitor.

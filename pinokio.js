@@ -67,8 +67,12 @@ module.exports = {
         return [{
           default: true,
           icon: "fa-solid fa-power-off",
-          text: "Start",
+          text: "Start FramePack",
           href: "start.js",
+        }, {
+          icon: "fa-solid fa-power-off",
+          text: "Start FramePack-F1",
+          href: "start.js?version=f1",
         }, {
           icon: "fa-solid fa-plug",
           text: "Update",
@@ -86,7 +90,6 @@ module.exports = {
           text: "<div><strong>Reset</strong><div>Revert to pre-install state</div></div>",
           href: "reset.js",
           confirm: "Are you sure you wish to reset the app?"
-
         }]
       }
     } else {
