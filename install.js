@@ -6,7 +6,8 @@ module.exports = {
       params: {
         message: [
           //"git clone https://github.com/SUP3RMASS1VE/FramePack-fork app",
-          "git clone https://github.com/cocktailpeanut/FramePack app",
+          //"git clone https://github.com/cocktailpeanut/FramePack app",
+          "git clone https://github.com/lllyasviel/FramePack app",
         ]
       }
     },
@@ -34,6 +35,13 @@ module.exports = {
           "uv pip install gradio devicetorch",
           "uv pip install -r requirements.txt"
         ]
+      }
+    },
+    {
+      method: 'input',
+      params: {
+        title: 'Installation completed',
+        description: 'Click "Start FramePack (Standard) Or Start FramePack (F1 Version) in the left menu to launch the app manually'
       }
     },
   ]
