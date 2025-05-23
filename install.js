@@ -55,7 +55,7 @@ module.exports = {
       method: 'input',
       params: {
         title: 'Installation completed',
-        description: 'Click "Start FramePack (Standard) Or Start FramePack (F1 Version) in the left menu to launch the app manually'
+        description: 'Click "Start FramePack (Standard)", "Start FramePack (F1)" or "Start FramePack (Key Frame)" in the left menu to launch the app manually'
       }
     },
   ]
