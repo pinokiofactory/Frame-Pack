@@ -11,6 +11,20 @@ module.exports = {
         ]
       }
     },
+    {
+      when: "{{platform === 'win32'}}",
+      method: "shell.run",
+      params: {
+        message: "copy /Y demo_gradio_k.py app"
+      },
+    },
+    {
+      when: "{{platform !== 'win32'}}",
+      method: "shell.run",
+      params: {
+        message: "cp -f demo_gradio_k.py app"
+      }
+    },
     // Delete this step if your project does not use torch
     {
       method: "script.start",
@@ -41,7 +55,7 @@ module.exports = {
       method: 'input',
       params: {
         title: 'Installation completed',
-        description: 'Click "Start FramePack (Standard) Or Start FramePack (F1 Version) in the left menu to launch the app manually'
+        description: 'Click "Start FramePack (Standard)", "Start FramePack (F1)" or "Start FramePack (Key Frame)" in the left menu to launch the app manually'
       }
     },
   ]
