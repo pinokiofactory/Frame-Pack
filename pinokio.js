@@ -10,6 +10,7 @@ module.exports = {
       install: info.running("install.js"),
       start: info.running("start.js"),
       start_f1: info.running("start_f1.js"),
+      start_k: info.running("start_k.js"),
       update: info.running("update.js"),
       reset: info.running("reset.js"),
       link: info.running("link.js")
@@ -22,8 +23,9 @@ module.exports = {
         href: "install.js",
       }]
     } else if (installed) {
-      if (running.start || running.start_f1) {
-        let local = info.local(running.start ? "start.js" : "start_f1.js")
+      if (running.start || running.start_f1 || running.start_k) {
+        const script = running.start ? "start.js" : running.start_f1 ? "start_f1.js" : "start_k.js"
+        let local = info.local(script)
         if (local && local.url) {
           return [{
             default: true,
@@ -33,14 +35,14 @@ module.exports = {
           }, {
             icon: 'fa-solid fa-terminal',
             text: "Terminal",
-            href: running.start ? "start.js" : "start_f1.js",
+            href: script,
           }]
         } else {
           return [{
             default: true,
             icon: 'fa-solid fa-terminal',
             text: "Terminal",
-            href: running.start ? "start.js" : "start_f1.js",
+            href: script,
           }]
         }
       } else if (running.update) {
@@ -66,14 +68,17 @@ module.exports = {
         }]
       } else {
         return [{
-          default: true,
           icon: "fa-solid fa-power-off",
           text: "Start FramePack (Standard)",
           href: "start.js",
         }, {
           icon: "fa-solid fa-power-off",
-          text: "Start FramePack (F1 Version)",
+          text: "Start FramePack (F1)",
           href: "start_f1.js",
+        }, {
+          icon: "fa-solid fa-power-off",
+          text: "Start FramePack (KeyFrame)",
+          href: "start_k.js",
         }, {
           icon: "fa-solid fa-plug",
           text: "Update",

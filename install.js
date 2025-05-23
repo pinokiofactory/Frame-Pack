@@ -11,6 +11,24 @@ module.exports = {
         ]
       }
     },
+    {
+      when: "{{platform === 'win32'}}",
+      method: "shell.run",
+      params: {
+        venv: "env",
+        path: "app",
+        message: "copy /Y demo_gradio_k.py app"
+      },
+    },
+    {
+      when: "{{platform !== 'win32'}}",
+      method: "shell.run",
+      params: {
+        venv: "env",
+        path: "app",
+        message: "cp -f demo_gradio_k.py app"
+      }
+    },
     // Delete this step if your project does not use torch
     {
       method: "script.start",
