@@ -15,8 +15,6 @@ module.exports = {
       when: "{{platform === 'win32'}}",
       method: "shell.run",
       params: {
-        venv: "env",
-        path: "app",
         message: "copy /Y demo_gradio_k.py app"
       },
     },
@@ -24,8 +22,6 @@ module.exports = {
       when: "{{platform !== 'win32'}}",
       method: "shell.run",
       params: {
-        venv: "env",
-        path: "app",
         message: "cp -f demo_gradio_k.py app"
       }
     },
