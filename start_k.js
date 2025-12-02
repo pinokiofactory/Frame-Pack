@@ -5,6 +5,9 @@ module.exports = async (kernel) => {
     const scriptToRun = "demo_gradio_k.py"
     
     return {
+      requires: {
+        bundle: "ai",
+      },
       daemon: true,
       run: [
         {
