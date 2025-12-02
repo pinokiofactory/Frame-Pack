@@ -1,4 +1,7 @@
 module.exports = {
+  requires: {
+    bundle: "ai",
+  },
   run: [
     // Edit this step to customize the git repository to use
     {
