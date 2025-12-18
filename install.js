@@ -15,15 +15,21 @@ module.exports = {
       when: "{{platform === 'win32'}}",
       method: "shell.run",
       params: {
-        message: "copy /Y demo_gradio_k.py app"
+        message: [
+          "copy /Y demo_gradio_k.py app",
+          "copy /Y demo_gradio_f1.py app"
+        ]
       },
     },
     {
       when: "{{platform !== 'win32'}}",
       method: "shell.run",
       params: {
-        message: "cp -f demo_gradio_k.py app"
-      }
+        message: [
+          "cp -f demo_gradio_k.py app",
+          "cp -f demo_gradio_f1.py app"
+        ]
+      },
     },
     {
       method: "script.start",
