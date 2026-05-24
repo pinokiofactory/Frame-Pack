@@ -32,6 +32,18 @@ module.exports = {
       },
     },
     {
+      method: "shell.run",
+      params: {
+        venv: "env",
+        path: "app",
+        message: [
+          "uv pip install gradio devicetorch",
+          "uv pip install -r requirements.txt",
+          "uv pip install hf_xet"
+        ]
+      }
+    },
+    {
       method: "script.start",
       params: {
         uri: "torch.js",
@@ -42,18 +54,6 @@ module.exports = {
           // triton: true,
           // sageattention: true
         }
-      }
-    },
-    {
-      method: "shell.run",
-      params: {
-        venv: "env",
-        path: "app",
-        message: [
-          "uv pip install gradio devicetorch",
-          "uv pip install -r requirements.txt",
-          "uv pip install hf_xet"
-        ]
       }
     },
     {
